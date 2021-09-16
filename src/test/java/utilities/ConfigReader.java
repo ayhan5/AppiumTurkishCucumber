@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class ConfigReader {
-    //we wiil read data from config
+    //configuration properties file daki datalari okumamizi sagliyor
     private static Properties properties;
     static {
         String path = "configuration.properties";
@@ -13,7 +13,7 @@ public class ConfigReader {
             properties = new Properties();
             properties.load(file);
         }catch (Exception e){
-            System.out.println("Could not read config file");
+            System.out.println("Configuration file bulunamadi.");
         }
     }
     //will return value from config

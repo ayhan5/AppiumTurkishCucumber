@@ -2,6 +2,7 @@ package utilities;
 
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -15,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
-    private static AppiumDriver<WebElement> appiumDriver;
+    private static AppiumDriver<MobileElement> appiumDriver;
 
     public static AppiumDriver getAppiumDriver()  {
         URL appiumServerURL = null;
@@ -39,7 +40,6 @@ public class Driver {
             //if you do not provide app path so you should provide "appPackage" and "appActivity"
             desiredCapabilities.setCapability("appPackage","");
             desiredCapabilities.setCapability("appActivity","");
-
             appiumDriver = new AndroidDriver(appiumServerURL,desiredCapabilities);
             appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             } else if (ConfigReader.getProperty("platformName").equals("ios")) {
