@@ -3,9 +3,17 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.android.APIDemosPage;
+import pages.android.MainPage;
+import pages.android.PreferenceDependenciesPage;
+import pages.android.PreferencePage;
 import utilities.Driver;
 
 public class FirstClass {
+    MainPage mainPage = new MainPage();
+    APIDemosPage apiDemosPage = new APIDemosPage();
+    PreferencePage preferencePage = new PreferencePage();
+    PreferenceDependenciesPage preferenceDependenciesPage = new PreferenceDependenciesPage();
     @Given("App telefonda acilsin")
     public void app_telefonda_acilsin() {
         Driver.getAppiumDriver();
@@ -13,44 +21,39 @@ public class FirstClass {
 
     @When("kullanici API demos tiklasin")
     public void kullanici_api_demos_tiklasin() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        mainPage.apiDemos.click();
     }
 
     @When("kullanici Preference tiklasin")
     public void kullanici_preference_tiklasin() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       apiDemosPage.preference.click();
     }
 
     @When("kullanici Preference Dependencies tiklasin")
     public void kullanici_preference_dependencies_tiklasin() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       preferencePage.preferenceDependencies.click();
     }
 
     @When("kullanici checkbox tik atsin")
     public void kullanici_checkbox_tik_atsin() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        if (preferenceDependenciesPage.checkBox.getAttribute("checked").equals("false")){
+            preferenceDependenciesPage.checkBox.click();
+        }
     }
 
     @When("kullanici WiFi settings tiklasin")
     public void kullanici_wi_fi_settings_tiklasin() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        preferenceDependenciesPage.wifiSettings.click();
     }
 
     @When("kullanici kutiya yazi gondersin {string}")
     public void kullanici_kutiya_yazi_gondersin(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        preferenceDependenciesPage.textBox.sendKeys("Appium Demo");
     }
 
     @Then("kullanici OK tiklasin")
     public void kullanici_ok_tiklasin() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        preferenceDependenciesPage.okButton.click();
     }
 
 }

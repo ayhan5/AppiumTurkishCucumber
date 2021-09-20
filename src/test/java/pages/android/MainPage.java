@@ -12,6 +12,6 @@ public class MainPage {
     public MainPage(){
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(30)),this);
     }
-    @AndroidFindBy(xpath = "")
-    public MobileElement singInButton;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='API Demos']")
+    public MobileElement apiDemos;
 }
