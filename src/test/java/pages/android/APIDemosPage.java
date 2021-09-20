@@ -15,4 +15,7 @@ public class APIDemosPage {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Preference']")
     public MobileElement preference;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Views']")
+    public MobileElement views;
 }

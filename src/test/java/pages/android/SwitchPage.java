@@ -8,14 +8,15 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-public class PreferencePage {
-    public PreferencePage(){
+public class SwitchPage {
+    public SwitchPage(){
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(15)),this);
     }
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='3. Preference dependencies']")
-    public MobileElement preferenceDependencies;
+    @AndroidFindBy(xpath = "(//android.widget.Switch)[1]")
+    public MobileElement firstSwitchButton;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='9. Switch']")
-    public MobileElement switchButton;
+    @AndroidFindBy(xpath = "(//android.widget.Switch)[2]")
+    public MobileElement secondSwitchButton;
+
 }

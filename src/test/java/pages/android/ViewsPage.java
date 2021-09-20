@@ -8,14 +8,14 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-public class PreferencePage {
-    public PreferencePage(){
+public class ViewsPage {
+
+    public ViewsPage(){
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(15)),this);
     }
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Drag and Drop']")
+    public MobileElement dragDrop;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='3. Preference dependencies']")
-    public MobileElement preferenceDependencies;
-
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='9. Switch']")
-    public MobileElement switchButton;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Date Widgets']")
+    public MobileElement dateWidgets;
 }
