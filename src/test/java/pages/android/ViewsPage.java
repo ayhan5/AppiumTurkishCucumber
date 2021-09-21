@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class ViewsPage {
 
@@ -18,4 +19,7 @@ public class ViewsPage {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Date Widgets']")
     public MobileElement dateWidgets;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switches']")
+    public List<MobileElement> switches;
 }
