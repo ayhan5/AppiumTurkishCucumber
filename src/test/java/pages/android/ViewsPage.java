@@ -19,7 +19,13 @@ public class ViewsPage {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Date Widgets']")
     public MobileElement dateWidgets;
-
+    //elementi list icinde locate ettik.
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switches']")
     public List<MobileElement> switches;
+//elementi tek olarak locate ettik
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switches']")
+    public MobileElement switchesSingle;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='WebView']")
+    public MobileElement webView;
 }
