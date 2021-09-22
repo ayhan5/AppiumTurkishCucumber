@@ -15,6 +15,8 @@ public class AllPages {
     private ViewsPage viewsPage;
     private DragDropPage dragDropPage;
     private DateWidgetsPage dateWidgetsPage;
+    private ExpandableListsPage expandableListsPage;
+    private SpinnerPage spinnerPage;
 
     //her page klass icin public method olsuturp obje olustracagiz
     public APIDemosPage apiDemosPage(){
@@ -69,6 +71,19 @@ public class AllPages {
             dateWidgetsPage = new DateWidgetsPage();
         }
         return dateWidgetsPage;
+    }
+
+    public ExpandableListsPage expandableListsPage(){
+        if (expandableListsPage == null){
+            expandableListsPage = new ExpandableListsPage();
+        }
+        return expandableListsPage;
+    }
+    public SpinnerPage spinnerPage(){
+        if (spinnerPage == null){
+            spinnerPage = new SpinnerPage();
+        }
+        return spinnerPage;
     }
 
 }
