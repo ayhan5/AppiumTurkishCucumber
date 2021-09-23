@@ -10,14 +10,29 @@ import java.util.List;
 public class ReusableMethods {
 
       public static void clickOnPage(String pageName) throws InterruptedException {
+          Thread.sleep(4000);
           List<MobileElement> pages = Driver.getAppiumDriver().findElementsByClassName("android.widget.TextView");
           for (MobileElement page: pages) {
               if (page.getText().equals(pageName)){
                   page.click();
                   break;
+              }else{
+                  scrollWithUiScrollable(pageName);
+                  break;
               }
           }
       }
+
+//ikinci alternatif bir method
+    public static void clickOnPage1(String pageName) throws InterruptedException {
+        Thread.sleep(4000);
+        List<MobileElement> pages = Driver.getAppiumDriver().findElementsByClassName("android.widget.TextView[@text='"+pageName+"']");
+        if (pages.size()>0){
+            pages.get(0).click();
+        }else scrollWithUiScrollable(pageName);
+    }
+
+
 
       public static void scrollWithUiScrollable(String elementText){
           AndroidDriver  driver = (AndroidDriver) Driver.getAppiumDriver();
