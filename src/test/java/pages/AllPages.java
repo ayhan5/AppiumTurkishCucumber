@@ -1,6 +1,11 @@
 package pages;
 
 import pages.android.*;
+import pages.ios.AlertViewsPage;
+import pages.ios.IOSSwitchPage;
+import pages.ios.PickerViewPage;
+import stepdefinitions.IOSPickerStepDefs;
+import stepdefinitions.IOSSwitchStepDefs;
 
 public class AllPages {
 
@@ -17,6 +22,10 @@ public class AllPages {
     private DateWidgetsPage dateWidgetsPage;
     private ExpandableListsPage expandableListsPage;
     private SpinnerPage spinnerPage;
+    //======== burdan asagisi ios pageleri
+    private AlertViewsPage alertViewsPage;
+    private IOSSwitchPage iosSwitchPage;
+    private PickerViewPage pickerViewPage;
 
     //her page klass icin public method olsuturp obje olustracagiz
     public APIDemosPage apiDemosPage(){
@@ -84,6 +93,25 @@ public class AllPages {
             spinnerPage = new SpinnerPage();
         }
         return spinnerPage;
+    }
+
+    public AlertViewsPage alertViewsPage(){
+        if (alertViewsPage == null){
+            alertViewsPage = new AlertViewsPage();
+        }
+        return alertViewsPage;
+    }
+    public IOSSwitchPage iosSwitchPage(){
+        if (iosSwitchPage == null){
+            iosSwitchPage = new IOSSwitchPage();
+        }
+        return iosSwitchPage;
+    }
+    public PickerViewPage pickerViewPage(){
+        if (pickerViewPage == null ){
+            pickerViewPage = new PickerViewPage();
+        }
+        return pickerViewPage;
     }
 
 }
